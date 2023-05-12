@@ -1,0 +1,3 @@
+### 카프카 동작 테스트
+POST {{host}}/kafka/message?message=우기온앤온
+Content-Type: application/json

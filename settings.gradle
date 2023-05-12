@@ -1,2 +1,4 @@
 rootProject.name = 'kafka-test'
+include 'core'
+include 'web'
 
