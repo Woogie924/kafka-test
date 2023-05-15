@@ -30,7 +30,7 @@ public abstract class DataSourceConfig {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource);
         sqlSessionFactoryBean.setConfiguration(this.getConfiguration());
-//         sqlSessionFactoryBean.setTypeAliasesPackage("com.example.kafka");
+        sqlSessionFactoryBean.setTypeAliasesPackage("com.example.kafka");
 
         return sqlSessionFactoryBean.getObject();
     }
