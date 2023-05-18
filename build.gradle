@@ -40,6 +40,9 @@ subprojects {
         implementation "org.springframework.boot:spring-boot-starter-web"
         implementation "org.springframework.boot:spring-boot-starter-validation"
 
+        // kafka
+        implementation 'org.springframework.kafka:spring-kafka'
+
         testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
         testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     }
@@ -60,8 +63,6 @@ project(':core') {
     jar.enabled = true
 
     dependencies {
-        // kafka
-        implementation 'org.springframework.kafka:spring-kafka'
 
         implementation "org.mybatis.spring.boot:mybatis-spring-boot-starter:${mybatisVersion}"
 
@@ -72,5 +73,6 @@ project(':web') {
     dependencies {
         // 컴파일시 core 모듈을 가져온다.
         compileOnly project(':core')
+
     }
 }

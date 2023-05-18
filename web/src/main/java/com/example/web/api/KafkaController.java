@@ -1,7 +1,7 @@
-package com.example.kafka.controller;
+package com.example.web.api;
 
-import com.example.kafka.service.KafkaProducer;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.web.service.KafkaProducer;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,18 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/kafka")
+@RequiredArgsConstructor
 public class KafkaController {
 
     private final KafkaProducer producer;
 
-    @Autowired
-    KafkaController(KafkaProducer producer) {
-        this.producer = producer;
-    }
-
     @PostMapping(value = "/message")
     public String sendMessage(@RequestParam("message") String message) {
-        this.producer.sendMessage(message);
+        this.producer.sendMessage("asd", message);
         return "success";
     }
 
